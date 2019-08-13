@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Match3Lib
+﻿namespace Match3Lib
 {
     public interface IGameEventsListener
     {
@@ -14,5 +9,12 @@ namespace Match3Lib
 
         //void OnCellBlock(int x, int y);
         //void OnCellUnblock(int x, int y);
+    }
+
+    internal interface IMapEventsListener
+    {
+        void OnCellCreate(Point cellPos, int cellType);
+        void OnCellMove(Point oldPos, Point newPos);
+        void OnCellDestroy(Point cellPos);
     }
 }

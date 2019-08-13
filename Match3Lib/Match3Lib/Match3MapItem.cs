@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Match3Lib
+﻿namespace Match3Lib
 {
     internal class Match3MapItem
     {
@@ -15,18 +10,21 @@ namespace Match3Lib
             ItemType = template.ItemType;
             IsBlocked = template.IsBlocked;
         }
+
         public Match3MapItem(int currentItemType, bool needBlock = false)
         {
             ItemType = currentItemType;
             IsBlocked = needBlock;
         }
+
         public void Block()
         {
             IsBlocked = true;
         }
+
         public void Unblock()
         {
             IsBlocked = false;
         }
-    }   
+    }
 }

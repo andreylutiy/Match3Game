@@ -51,15 +51,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants.cs" />
-    <Compile Include="GameHintController.cs" />
-    <Compile Include="IGameEventsListener.cs" />
+    <Compile Include="MapStateManager.cs" />
+    <Compile Include="Interfaces.cs" />
     <Compile Include="Match3Controller.cs" />
-    <Compile Include="Match3ControllerOld.cs" />
-    <Compile Include="Match3GameStepController.cs" />
+    <Compile Include="Match3BangController.cs" />
     <Compile Include="Match3Map.cs" />
     <Compile Include="Match3MapItem.cs" />
+    <Compile Include="Match3MapManager.cs" />
     <Compile Include="Point.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreManager.cs" />
     <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
