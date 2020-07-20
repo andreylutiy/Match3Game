@@ -1,23 +1,27 @@
 ﻿using UnityEngine;
 
-public class ScorePanelController : MonoBehaviour
+namespace Match3Game
 {
-    [SerializeField]
-    UnityEngine.UI.Text scoreText;
-
-    void Start()
+    public class ScorePanelController : MonoBehaviour
     {
-        if (scoreText != null)
-            scoreText.text = GameSettings.lastScore.ToString();
-    }
+        [SerializeField] UnityEngine.UI.Text ScoreText;
 
-    public void RestartGame()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-    }
+        void Start()
+        {
+            if (ScoreText == null)
+                return;
 
-    public void GoToStartScene()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            ScoreText.text = GameSettings.LastScore.ToString();
+        }
+
+        public void RestartGame()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        }
+
+        public void GoToStartScene()
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
     }
 }

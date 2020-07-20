@@ -1,24 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class BangItemController : MonoBehaviour
+namespace Match3Game
 {
-    Animation anim;
-
-    void Awake()
+    public class BangItemController : MonoBehaviour
     {
-        anim = GetComponent<Animation>();
+        [SerializeField] private Animation Anim;
 
-        if (anim != null)
-            anim.Play();
-        else
-            Destroy(gameObject);
-    }
+        void Awake()
+        {
+            if (Anim == null)
+            {
+                Destroy(gameObject);
+                return;
+            }
 
-    void Update()
-    {
-        if (!anim.isPlaying)
-            Destroy(gameObject);
+            Anim.Play();
+        }
+
+        void Update()
+        {
+            if (!Anim.isPlaying)
+                Destroy(gameObject);
+        }
     }
 }

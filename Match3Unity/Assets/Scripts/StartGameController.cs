@@ -1,26 +1,27 @@
 ﻿using UnityEngine;
 
-public class StartGameController : MonoBehaviour
+namespace Match3Game
 {
-    [SerializeField]
-    GameObject mainPanel;
-    [SerializeField]
-    GameObject gameLevelPanel;
-
-    public void Play()
+    public class StartGameController : MonoBehaviour
     {
-        gameLevelPanel.SetActive(true);
-        mainPanel.SetActive(false);
-    }
+        [SerializeField] private GameObject MainPanel;
+        [SerializeField] private GameObject GameLevelPanel;
 
-    public void SelectGame(int gameLevel)
-    {
-        GameSettings.gameLevel = gameLevel;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-    }
+        public void Play()
+        {
+            GameLevelPanel.SetActive(true);
+            MainPanel.SetActive(false);
+        }
 
-    public void Exit()
-    {
-        Application.Quit();
+        public void SelectGame(int gameLevel)
+        {
+            GameSettings.GameLevel = gameLevel;
+            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        }
+
+        public void Exit()
+        {
+            Application.Quit();
+        }
     }
 }
